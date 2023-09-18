@@ -15,6 +15,9 @@ long long sol(std::string s) {
 }
 
 int main() {
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  std::cout.tie(nullptr);
   std::string S;
   std::cin >> S;
   std::cout << sol(S);
