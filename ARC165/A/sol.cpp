@@ -30,8 +30,8 @@ std::vector<std::pair<T, int>> factor(T num) {
 }
 
 void sol() {
-	std::ios::sync_with_stdio(false);
-	std::cin.tie(nullptr);
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
   std::cout.tie(nullptr);
   long long T, N;
   std::cin >> T;
