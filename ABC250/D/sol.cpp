@@ -51,7 +51,7 @@ void sol() {
    };
    long long ans = 0;
    for( int i = 0; i < static_cast<int>( p.size() ); ++i ) {
-      int pos = get(p, p[i], i, static_cast<int>( p.size() ), N );
+      int pos = get( p, p[i], i, static_cast<int>( p.size() ), N );
       ans += (long long) p[i] * std::pow(p[pos], 3) <= N ? ((pos - i)) : 0;
       if( p[i] > N ) break;  
    }
