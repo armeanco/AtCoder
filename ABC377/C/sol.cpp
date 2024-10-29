@@ -22,7 +22,7 @@ void sol() {
                 std::cin >> a >> b;
                 fill(a, b, N, setik);
         }
-        std::cout << setik.begin()->first == 0 ? static_cast<long>(N) * N - (setik.size() - 1) : static_cast<long>(N) * N - static_cast<int>(setik.size()) << "\n";
+        std::cout << ((setik.begin()->first) == 0 ? static_cast<long>(N) * N - (setik.size() - 1) : static_cast<long>(N) * N - static_cast<int>(setik.size()));}
 }
 
 int main() {
