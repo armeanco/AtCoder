@@ -8,7 +8,7 @@ int main() {
     std::cin >> s;
     int left = 0, right = 0, center = s.size() / 2 + 1;
     int mismatch = 0, valid = 0, control = 0;
-    for(int i = center - 1, k = center; i > 0; --i, ++k) {
+    for(int i = center - 1; i > 0; --i) {
         left = i - 1, right = i + 1;
         while(mismatch < 2 && left >= 0 && right < static_cast<int>(s.size())) {
                 if(s[left] != s[right]) {
@@ -26,7 +26,7 @@ int main() {
             }
             mismatch = 0;
             if(control < 1) {
-                for(int j = i, f = i + 1; j >= 0; --j, ++f) {
+                for(int j = i; j >= 0; --j) {
                 left = j, right = j + 1;
                 while(mismatch < 2 && left >= 0 && right < static_cast<int>(s.size())) {
                         if(s[left] != s[right]) {
@@ -66,7 +66,7 @@ int main() {
             }
             mismatch = 0;
             if(control < 1) {
-                for(int j = i, f = i + 1; j < static_cast<int>(s.size()); ++j, ++f) {
+                for(int j = i; j < static_cast<int>(s.size()); ++j) {
                 left = j, right = j + 1;
                 while(mismatch < 2 && left > 0 && right < static_cast<int>(s.size())) {
                         if(s[left] != s[right] && mismatch <= 1) {
