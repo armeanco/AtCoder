@@ -6,7 +6,7 @@ int main() {
     std::cin.tie(nullptr);
     std::string s;
     std::cin >> s;
-    int left = 0, right = 0, center = s.size() % 2 ? s.size() / 2 + 1 : s.size() / 2 + 1;
+    int left = 0, right = 0, center = s.size() / 2 + 1;
     int mismatch = 0, valid = 0, control = 0;
     for(int i = center - 1, k = center; i > 0; --i, ++k) {
         left = i - 1, right = i + 1;
