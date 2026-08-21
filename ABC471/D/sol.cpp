@@ -8,7 +8,6 @@ int main() {
     std::cin.tie(nullptr);
     int q, v, x;
     std::cin >> q >> v;
-    int i = 0;
     std::set<std::vector<int>> what;
     while(q--) {
         int a, b;
@@ -16,7 +15,6 @@ int main() {
         if(x == 1) {
             std::cin >> a >> b;
             what.insert({a >= b ? (b - a) : (b - a), a, b});
-            i++;
         }
         if(x == 2) {
             std::cin >> b;
@@ -26,7 +24,6 @@ int main() {
                 std::cout << (((b - ti[1]) + ti[2]) >= v ? v : ((b - ti[1]) + ti[2])) << "\n";
                 if(!what.empty()) what.erase(std::next(what.rbegin()).base());
             }
-            i++;
         }
     }
     return 0;
