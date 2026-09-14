@@ -1,11 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include <map>
 #include <algorithm>
 #include <cmath>
 
-void linearSieve(int n, std::vector<int> &primes, std::map<std::string, int> &s) {
+void linearSieve(int n, std::vector<int> &primes, std::string& ans, bool &ok) {
     std::vector<int> min_prime(n + 1, 0);
     for (int i = 2; i <= n; ++i) {
         std::vector<int> hash(10, 1e3);
@@ -20,7 +19,11 @@ void linearSieve(int n, std::vector<int> &primes, std::map<std::string, int> &s)
                 }
             }
             primes.push_back(i); 
-            s.insert({t, i});
+            if(t == ans) {
+                std::cout << i << "\n";
+                ok = 1;
+                return;
+            }
             t = "";
         }
         for (size_t j = 0; j < primes.size() && primes[j] <= min_prime[i] && i * primes[j] <= n; ++j) {
@@ -41,16 +44,8 @@ int main() {
         ans += hash[s[i] - 'a'] + 'a';
     }
     std::vector<int> p;
-    std::map<std::string, int> sequence;
-    linearSieve(std::pow(10, static_cast<int>(s.size())) - 1, p, sequence);
-    auto it = sequence.find(ans);
-    if(it != sequence.end()) {
-        std::cout << it->second << '\n';
-        return 0;
-    }
-    else {
-        std::cout << "-1\n";
-        return 0;
-    }
+    bool ok = 0;
+    linearSieve(std::pow(10, static_cast<int>(s.size())) - 1, p, ans, ok);
+    if(!ok) std::cout << "-1\n";
     return 0;
 }
