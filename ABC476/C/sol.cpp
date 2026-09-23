@@ -11,7 +11,6 @@ int main() {
     std::map<int, int> mp;
     int x;
     for(int i = 0; i <= n; ++i) {
-        //std::cout << "x: " << x << "\n";
         std::cin >> x;
         if(i < 3) {
             setik.insert(x);
